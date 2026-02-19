@@ -1,0 +1,19 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import React from "react";
+
+const analyticsLayout = ({ children }: { children: React.ReactNode }) => {
+	return (
+		<div>
+			<Button asChild>
+				<Link href={"/dashboard/analytics/monthly"}>Monthly Analytics</Link>
+			</Button>
+			<Button asChild>
+				<Link href={"/dashboard/analytics/weekly"}>Weekly Analytics</Link>
+			</Button>
+			{children}
+		</div>
+	);
+};
+
+export default analyticsLayout;

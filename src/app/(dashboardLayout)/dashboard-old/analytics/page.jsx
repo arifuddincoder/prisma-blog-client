@@ -1,9 +1,11 @@
+import Link from "next/link";
 import React from "react";
+import { Button } from "@/components/ui/button";
 
 const page = () => {
 	return (
 		<div>
-			<h1>Register</h1>
+			<h2>Analytics</h2>
 		</div>
 	);
 };
