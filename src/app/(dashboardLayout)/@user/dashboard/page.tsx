@@ -1,11 +1,16 @@
-import React from "react";
+import { userService } from "@/services/user.service";
+import { Roles } from "@/constants/roles";
+import { redirect } from "next/navigation";
 
-const userDashboard = () => {
-	return (
-		<div>
-			<h1>User Dashboard</h1>
-		</div>
-	);
-};
+export default async function DashboardPage() {
+	const { data } = await userService.getSession();
 
-export default userDashboard;
+	if (!data) redirect("/login");
+
+	const isAdmin = data.user.role === Roles.admin;
+
+	if (isAdmin) redirect("/admin-dashboard");
+
+	// user landing
+	return <div>User Dashboard</div>;
+}
