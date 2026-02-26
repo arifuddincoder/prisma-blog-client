@@ -61,6 +61,11 @@ export const userRoutes = [
 		url: "/dashboard/create-blog",
 		icon: BookOpen,
 	},
+	{
+		name: "Blogs",
+		url: "/dashboard/history",
+		icon: BookOpen,
+	},
 ];
 
 export function AppSidebar({ user, ...props }: { user: { role: string } & React.ComponentProps<typeof Sidebar> }) {
